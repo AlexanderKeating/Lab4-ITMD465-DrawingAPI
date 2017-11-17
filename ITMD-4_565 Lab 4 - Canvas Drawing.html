@@ -36,57 +36,80 @@
         var canvas = document.getElementById("myCanvas");
         var button = document.getElementById("canvasRun");
         var flat = canvas.getContext("2d");
-        var grad = flat.createLinearGradient(0,450,0,0);
-        grad.addColorStop(0,"Black");
-        grad.addColorStop(1,"White");
-        
-        
-        
+        var grad = flat.createLinearGradient(0, 450, 0, 0);
+        grad.addColorStop(0, "Black");
+        grad.addColorStop(1, "White");
+
+
+
         button.addEventListener("click", function() {
 
             /*Start with the gradient*/
             flat.beginPath();
             flat.fillStyle = grad;
-            flat.fillRect(0,0,600,450);
-            
+            flat.fillRect(0, 0, 600, 450);
+
             /*Font && Line under Font*/
             flat.beginPath();
             flat.fillStyle = "#C80000";
             flat.font = "32px sans-serif";
             flat.fillText("ITMD 465 Canvas Lab", 140, 50);
-            
+            flat.closePath();
+
             flat.beginPath();
             flat.strokeStyle = "#C80000";
             flat.lineWidth = 3;
             flat.moveTo(20, 60);
             flat.lineTo(580, 60);
             flat.stroke();
-            
+            flat.closePath();
+
+
             /*Blue Circle && white circle*/
             flat.beginPath();
             flat.fillStyle = "white";
             /*(y axis, x axis, size)*/
-            flat.arc(100,155,63,0,2*Math.PI);
+            flat.arc(100, 155, 63, 0, 2 * Math.PI);
             flat.fill();
-            
+            flat.closePath();
+
+
             flat.beginPath();
             flat.fillStyle = "#0000C8";
             /*(y axis, x axis, size)*/
-            flat.arc(100,155,60,0,2*Math.PI);
+            flat.arc(100, 155, 60, 0, 2 * Math.PI);
             flat.fill();
-           
-            
-            
+            flat.closePath();
+
+
+
+
             /*Half orange circle*/
             flat.beginPath();
             flat.strokeStyle = "#FFA500";
             flat.lineWidth = 20;
             /*(y axis, x axis, size)*/
-            flat.arc(350,155,80,4,2*Math.PI);
+            flat.arc(300, 170, 65, 1.5 * Math.PI, .3 * Math.PI);
             flat.stroke();
+            flat.closePath();
+
+
+
+            /*Red Square*/
+            flat.beginPath();
+            flat.fillStyle = "white";
+            flat.rect(445,95,130,130);
+            flat.fill();
+            flat.closePath();
+            
+            flat.beginPath();
+            flat.fillStyle = "#C80000";
+            flat.rect(450,100,120,120);
+            flat.fill();
+            flat.closePath();
             
 
-          
+
 
 
 
