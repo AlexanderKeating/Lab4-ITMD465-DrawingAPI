@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)https://blackboard-v9-p.iit.edu/bbcswebdav/pid-569115-dt-content-rid-6585664_1/courses/X9102389.201810/lab4_template.html -->
+<html lang="en" class="gr__blackboard-v9-p_iit_edu">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>ITMD-4/565 Lab 4 - Canvas Drawing</title>
+    <style type="text/css">
+        #content-wrapper {
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #canvasRun {
+            background-color: #c00;
+            border: 0;
+            color: #fff;
+        }
+
+        #myCanvas {
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <div id="content-wrapper">
+        <button id="canvasRun">Draw Canvas</button><br><br>
+        <canvas id="myCanvas" width="600" height="450"></canvas>
+    </div>
+    <script type="text/javascript">
+        // Canvas Drawing Code Here
+        var canvas = document.getElementById("myCanvas");
+        var button = document.getElementById("canvasRun");
+        var flat = canvas.getContext("2d");
+        var grad = flat.createLinearGradient(0,450,0,0);
+        grad.addColorStop(0,"Black");
+        grad.addColorStop(1,"White");
+        
+        
+        
+        button.addEventListener("click", function() {
+
+            /*Start with the gradient*/
+            flat.beginPath();
+            flat.fillStyle = grad;
+            flat.fillRect(0,0,600,450);
+            
+            /*Font && Line under Font*/
+            flat.beginPath();
+            flat.fillStyle = "#C80000";
+            flat.font = "32px sans-serif";
+            flat.fillText("ITMD 465 Canvas Lab", 140, 50);
+            
+            flat.beginPath();
+            flat.strokeStyle = "#C80000";
+            flat.lineWidth = 3;
+            flat.moveTo(20, 60);
+            flat.lineTo(580, 60);
+            flat.stroke();
+            
+            /*Blue Circle && white circle*/
+            flat.beginPath();
+            flat.fillStyle = "white";
+            /*(y axis, x axis, size)*/
+            flat.arc(100,155,63,0,2*Math.PI);
+            flat.fill();
+            
+            flat.beginPath();
+            flat.fillStyle = "#0000C8";
+            /*(y axis, x axis, size)*/
+            flat.arc(100,155,60,0,2*Math.PI);
+            flat.fill();
+           
+            
+            
+            /*Half orange circle*/
+            flat.beginPath();
+            flat.strokeStyle = "#FFA500";
+            flat.lineWidth = 20;
+            /*(y axis, x axis, size)*/
+            flat.arc(350,155,80,4,2*Math.PI);
+            flat.stroke();
+            
+
+          
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
