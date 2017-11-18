@@ -19,10 +19,6 @@
             color: #fff;
         }
 
-        #myCanvas {
-            border: 1px solid black;
-        }
-
     </style>
 </head>
 
@@ -39,6 +35,9 @@
         var grad = flat.createLinearGradient(0, 450, 0, 0);
         grad.addColorStop(0, "Black");
         grad.addColorStop(1, "White");
+
+        var img = new Image();
+        img.src = "media/IIT_SAT_stack_186_white.png";
 
 
 
@@ -138,6 +137,21 @@
             flat.moveTo(410, 300);
             flat.quadraticCurveTo(470, 350, 530, 300);
             flat.stroke();
+            flat.closePath();
+
+            /*Name and email in the bottom right*/
+            flat.beginPath();
+            flat.fillStyle = "white";
+            flat.font = "14px sans-serif";
+            flat.fillText("Alex Keating", 20, 410);
+            flat.fillText("akeating@hawk.iit.edu", 20, 425);
+            flat.closePath();
+
+            /*IIT Logo*/
+            flat.beginPath();
+            flat.scale(.3,.3);
+            flat.drawImage(img, 1100, 1250);
+
             flat.closePath();
 
         });
