@@ -98,17 +98,17 @@
             /*Red Square*/
             flat.beginPath();
             flat.fillStyle = "white";
-            flat.rect(445,95,130,130);
+            flat.rect(445, 95, 130, 130);
             flat.fill();
             flat.closePath();
-            
+
             flat.beginPath();
             flat.fillStyle = "#C80000";
-            flat.rect(450,100,120,120);
+            flat.rect(450, 100, 120, 120);
             flat.fill();
             flat.closePath();
-            
-            
+
+
             /*Green Triangle*/
             flat.beginPath();
             flat.moveTo(100, 250);
@@ -118,6 +118,27 @@
             flat.fill();
             flat.closePath();
 
+            /*White Rectangle && Quadratic Curve*/
+            flat.beginPath();
+            flat.fillStyle = "white";
+            flat.rect(250, 250, 320, 100);
+            flat.fill();
+            flat.closePath();
+
+            flat.beginPath();
+            flat.strokeStyle = "black";
+            flat.setLineDash([10, 10]);
+            flat.lineWidth = 2;
+            flat.moveTo(280, 300);
+            flat.quadraticCurveTo(340, 250, 410, 300);
+            flat.stroke();
+            flat.closePath();
+
+            flat.beginPath();
+            flat.moveTo(410, 300);
+            flat.quadraticCurveTo(470, 350, 530, 300);
+            flat.stroke();
+            flat.closePath();
 
         });
 
